@@ -4,7 +4,7 @@
         <form>
             <div class="modal-body">
                 <div class="form-group">
-                  <label for="title">Title</label>
+                  <label for="title">Title {{ $title }}</label>
                   <input type="text" class="form-control"  name="title" wire:model='title' id="title" aria-describedby="help-title" >
                   @error('title')<span class="text-red-500"></span>@enderror
                 </div>

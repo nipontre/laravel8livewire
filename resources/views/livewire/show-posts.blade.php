@@ -5,8 +5,8 @@
                 {{ $isDialogOpen }}
                 <button wire:click='create()' type="button" class="btn btn-primary btn-md" >
                     Create
-                  </button>
-                  @if($isDialogOpen)
+                </button>
+                @if($isDialogOpen)
                     @include('livewire.create-posts')
                 @endif
                 <table class="rounded-lg w-fulltext-left">

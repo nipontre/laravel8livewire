@@ -33,18 +33,18 @@ class ShowPosts extends Component
 
     public function clearForm()
     {
-        $this->title = '';
+        $this->title = 'Dikosongkan';
         $this->description = '';
+        // $this->closeModalPopover();
     }
 
     public function store()
     {
         $this->isDialogOpen = false;
-        // $this->validate([
-        //     'title' => 'required',
-        //     'description' => 'required',
-        // ]);
-
+        $this->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
 
         Post::updateOrCreate(['id'=>$this->post_id],[
             'title'=>$this->title,
@@ -53,7 +53,6 @@ class ShowPosts extends Component
         ]);
 
         session()->flash('message',$this->post_id ? 'Post Updated':'Post created');
-
 
     }
 

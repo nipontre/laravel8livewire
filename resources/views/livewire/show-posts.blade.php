@@ -2,9 +2,13 @@
     <section class="flex justify-center h-screen bg-gray-300 ">
         <div class="m-20 bg-white shadow-lg">
             <div class="block">
-                <button wire:click='create()' type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#create-mdl">
+                {{ $isDialogOpen }}
+                <button wire:click='create()' type="button" class="btn btn-primary btn-md" >
                     Create
                   </button>
+                  @if($isDialogOpen)
+                    @include('livewire.create-posts')
+                @endif
                 <table class="rounded-lg w-fulltext-left">
                     <thead>
                         <tr class="text-gray-800 border border-b-0">
@@ -38,5 +42,6 @@
             </div>
         </div>
     </section>
+
 </div>
-@include('livewire.create-posts')
+

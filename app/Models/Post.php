@@ -17,5 +17,6 @@ class Post extends Model
 
     public $incrementing = true;
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
+    protected $fillable = ['title', 'description', 'user_id'];
 }

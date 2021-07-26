@@ -7,7 +7,7 @@ use App\Models\Post;
 class ShowPosts extends Component
 {
     public $posts, $text;
-    public $isDialogOpen=0;
+    // public $isDialogOpen=0;
     public function render()
     {
         $this->posts = Post::all();
@@ -17,17 +17,17 @@ class ShowPosts extends Component
 
     public function create()
     {
-        $this->openModalPopover();
+        // $this->openModalPopover();
     }
 
     public function openModalPopover()
     {
-        $this->isDialogOpen = true;
+        // $this->isDialogOpen = true;
     }
 
     public function closeModalPopover()
     {
-        $this->isDialogOpen = false;
+        // $this->isDialogOpen = false;
     }
 
 }

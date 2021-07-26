@@ -2,6 +2,10 @@
     <section class="flex justify-center h-screen bg-gray-300 ">
         <div class="m-20 bg-white shadow-lg">
             <div class="block overflow-x-auto">
+                <button wire:click='create()'>Create</button>
+                @if($isDialogOpen)
+                @include('livewire.create-posts')
+                @endif
                 <table class="rounded-lg w-fulltext-left">
                     <thead>
                         <tr class="text-gray-800 border border-b-0">

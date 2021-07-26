@@ -6,10 +6,11 @@ use Livewire\Component;
 use App\Models\Post;
 class ShowPosts extends Component
 {
-    public $posts;
+    public $posts, $text;
     public function render()
     {
         $this->posts = Post::all();
+        $this->text = 'Test';
         return view('livewire.show-posts');
     }
 }

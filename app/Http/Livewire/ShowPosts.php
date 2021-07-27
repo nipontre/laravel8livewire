@@ -33,9 +33,9 @@ class ShowPosts extends Component
 
     public function clearForm()
     {
-        $this->title = 'Dikosongkan';
+        $this->title = '';
         $this->description = '';
-        // $this->closeModalPopover();
+        $this->post_id = '';
     }
 
     public function store()
@@ -52,8 +52,24 @@ class ShowPosts extends Component
             'user_id'=> Auth::user()->id,
         ]);
 
+        $this->clearForm();
+
         session()->flash('message',$this->post_id ? 'Post Updated':'Post created');
 
+    }
+
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        $this->title = $post->title;
+        $this->description = $post->description;
+        $this->post_id = $post->id;
+    }
+
+    public function delete($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
     }
 
 

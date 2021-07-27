@@ -1,4 +1,13 @@
 <div>
+    @if(session()->has('message'))
+    <div class="mt-5 row">
+        <div class="col-md-8 offset-md-2">
+            <div class="alert alert-success" role="alert">
+                <strong>Success</strong> {{ session('message') }}
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="mt-5 row">
         <div class="col-md-8 offset-md-2">
             <div class="card">
@@ -42,10 +51,5 @@
             </div>
         </div>
     </div>
-</div>
-
-
-
     @include('livewire.create-posts')
 </div>
-
